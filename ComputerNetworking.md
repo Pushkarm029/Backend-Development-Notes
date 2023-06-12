@@ -209,4 +209,80 @@ it is a client server protocol it tells us how you request data from server and 
 
 ### **Methods**:
 You are telling server what to do.
-1. GET
+1. GET - requesting the data
+2. POST - data given by client to the server for eg - (username, password).
+3. PUT - puts data at a specific location,
+4. DELETE - delete data from the server.
+
+
+### **Status Code** 
+when you send a request to the server. you want to know that your request is successful or not. for that status code exists.
+
+200 -> indicates that the request has succeeded.
+404 -> tells a web user that a requested page is not available.
+400 -> the server cannot or will not process the request due to something that is perceived to be a client error.
+500 -> server encountered an unexpected condition that prevented it from fulfilling the request.
+
+<br>
+
+1XX -> Informational categories code
+2XX -> Success Code
+3XX -> Redirection Purpose
+4XX -> Client Error
+5XX -> Server Error
+
+
+### **Cookies**
+since, HTTP is stateless, everytime you reload the webapp lose its information. But In Real Life, It still stores the data because of cookies.
+
+- Cookie is a unique string which is stored in client's browser.
+- when you first time visit a website, it will set a cookie after that whenever you make a new request, in that request header a cookie will be sent. then, the server will know that this request coming from this client and this client sent me a cookie, then the server will check for that in database then load the state.
+
+
+#### **Third Party Cookies**
+ are those created by domains other than the one the user is visiting at the time, and are mainly used for tracking and online-advertising purposes.
+
+ ### **How Email Works?**
+
+ For sending email - SMTP
+ for recieving email - POP3
+
+ What happens when you send a mail from gmail to hotmail?
+ - The email will first sent to Sender's SMTP Server -> Reciever's SMTP Server -> Reciever.
+
+Process of downloading emails :
+1. The client connects to port 110 of POP server. Then, it carries out authorization, then transacts all the emails
+
+Folders like sent, drafts are not synced when we are using POP
+
+
+
+IMAP(Internet Message Access Protocol) :
+
+It allows you to view you all emails in all your devices.
+
+if delete an email in a device it will automatically deleted in all devices.
+
+
+### **Domain Name System (DNS) (V.V.IMP)**
+The Domain Name System (DNS) is the phonebook of the Internet.
+DNS translates domain names to IP addresses so browsers can load Internet resources.
+
+for example :
+mail.google.com 
+mail -> sub-domain, google->second-level domain, com -> top-level
+
+Instead of storing everything in one database , there are multiple database for these three catagories.
+
+- Root DNS Servers -
+
+![DNSServer](/images/backendss1.png)
+
+Root servers are DNS nameservers that operate in the root zone. These servers can directly answer queries for records stored or cached within the root zone, and they can also refer other requests to the appropriate Top Level Domain (TLD) server. The TLD servers are the DNS server group one step below root servers in the DNS hierarchy
+
+> Image with Step numbers -
+
+
+![DNS](images/Screenshot%20(5).png)
+
+  
