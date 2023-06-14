@@ -286,3 +286,46 @@ Root servers are DNS nameservers that operate in the root zone. These servers ca
 ![DNS](images/Screenshot%20(5).png)
 
   
+
+### **Transport Layer**
+
+the role of transport layer is to take the information from the network to the application.
+
+![TransportLayer](images/Screenshot%20(7).png)
+
+- Transport layer also takes care of congestion or traffic control
+- congestion control algorithms built in TCP
+- The transport layer is responsible for delivering data to the appropriate application process on the host computers. 
+- This involves statistical multiplexing of data from different application processes, i.e. forming data segments, and adding source and destination port numbers in the header of each transport layer data segment.
+- ![Multiplexing](https://media.geeksforgeeks.org/wp-content/cdn-uploads/CN_Multiplexing-1.jpg)
+-  Together with the source and destination IP address, the port numbers constitute a network socket.
+
+
+#### **Checksum**
+A checksum is a small-sized block of data derived from another block of digital data for the purpose of detecting errors that may have been introduced during its transmission or storage. 
+
+
+if the computed checksum for the current data input matches the stored value of a previously computed checksum, there is a very high probability the data has not been accidentally altered or corrupted.
+
+#### **Timer**
+- When a sender sends a segment to the receiver, a timeout timer starts.
+-  If the ACK gets received before the timer expires, then nothing happens. 
+-  Otherwise, the segment is considered lost, and therefore, it needs to be transmitted again. 
+-  Thus, it is resent, and the timer restarts.
+
+
+## **UDP (User Datagram Protocol)**
+
+- Data may or may not be delivered.
+- Data may change.
+- Data may not be in order.
+- Connectionless Protocol
+- uses Checksums. -> UDP knows data is corrupted or not but UDP doesn't do anything.
+- Data Packet Contains Source Port Number & Destination Port Number & length of Datagram & CheckSums & Data obviously.
+- Lot Faster 
+- Video Conferencing App
+- DNS -> UDP Because of Speed.
+
+![UDP](images/Screenshot%20(12).png)
+
+## **TCP (Transmission Control Protocol)**
