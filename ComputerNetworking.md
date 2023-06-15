@@ -329,3 +329,145 @@ if the computed checksum for the current data input matches the stored value of 
 ![UDP](images/Screenshot%20(12).png)
 
 ## **TCP (Transmission Control Protocol)**
+- The Transmission Control Protocol provides a communication service at an intermediate level between an application program and the Internet Protocol.
+-  It provides host-to-host connectivity at the transport layer of the Internet model
+-  takes care of when data doesn't arrive
+-  maintains the order of data
+-  optimized for accurate delivery rather than timely delivery
+
+
+### **Features**
+- Connection Oriented
+- Error control
+- Congestion Control
+- Full Duplex - both users can send and recieve file simultaneously.
+
+
+
+
+### **3-Way Handshake**
+![3wayhandshake](https://media.geeksforgeeks.org/wp-content/uploads/TCP-connection-1.png)
+
+
+
+### **Network Layer (TCP)**
+
+> Transport -> segments
+> Network -> Packets
+> Data Link -> Frames
+
+- Here we work with ***routers***
+
+![NetworkLayer](images/Screenshot%20(13).png)
+
+In IP address : 
+let's say - mmm.nnn.qqq.ppp
+The part (mmm.nnn.qqq) known as network address(Subnet ID) and (ppp) known as device address(Host ID).
+
+### **Control Plane**
+- The process of creating a routing table is considered part of the control plane.
+- Routers use various protocols to identify network paths, and they store these paths in routing tables.
+
+1. #### **Static Routing** - manually adding all these routes.
+2. #### **Dynamic Routing** - uses Bellman ford algorithm and dijikstra algorithm to add routes.
+
+
+### **Internet Protocol**
+
+
+> more info required...
+#### **IPv4**
+- 32 bits, 4-words
+
+#### **IPv6**
+- 128 bits
+
+
+> The Hoping thing happen over our ISPs. not in our routers.
+
+Class of IP addresses :
+- A - 0.0.0.0 - 127.255.255.255
+- B - 128.0.0.0 - 191.255.255.255
+- C - 192.0.0.0 - 223.255.255.255
+- D - 224.0.0.0 - 239.255.255.255
+- E - 240.0.0.0 - 255.255.255.255
+
+
+#### **loopback address**
+
+The IP address 127.0. 0.1 is called a loopback address. Packets sent to this address never reach the network but are looped through the network interface card only.
+
+
+### **Packets**
+Header is of 20 bytes.
+contains, IPv, length, identification, flags, protocols, checksum, addresses, Time to Live(TTL) etc.
+
+- Sometimes, hoping stucks in a loop so, after TTL reaches packet drops.
+
+### **IPv6**
+consists of 8 hexadecimal numbers.
+
+    a : a : a : a : a : a : a : a
+
+
+in IPv4 : 2^32 ~ 4.3 Billion
+in IPv6 : 2^128 ~ 3.4 x 10^38
+
+Cons : 
+- It's a new tech, so it is not backward compatile.
+- Not Entire world is not shifted on IPv6.
+- ISP would have to shift.
+- Lot of Hardware work.
+
+
+### **MiddleBoxes**
+
+- are the device that comes between end system and router.
+
+1. Firewall
+2. (NAT) Network Address Translation
+
+#### **Firewall**
+- Global Internet 
+- Your Trusted Network
+
+Filters out IP Packets based on various rules.
+
+- Address
+- Modify Packets
+- Port No.
+- Flags
+- Protocols
+
+Types :
+1. Stateless - doesn't store cache.
+2. Stateful - More Effective ans stores cache.
+
+#### **Network address translation**
+
+![yo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/NAT_Concept-en.svg/440px-NAT_Concept-en.svg.png)
+
+- Network address translation (NAT) is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
+-  The technique was originally used to bypass the need to assign a new address to every host when a network was moved, or when the upstream Internet service provider was replaced, but could not route the network's address space.
+
+### **Data Link Layer (TCP)**
+This layer is the protocol layer that transfers data between nodes on a network segment across the physical layer.
+
+
+
+
+
+
+
+Data Link Layer Functions
+The following are the key tasks performed at the data link layer:
+
+- Logical Link Control (LLC): Logical link control refers to the functions required for the establishment and control of logical links between local devices on a network. As mentioned above, this is usually considered a DLL sublayer; it provides services to the network layer above it and hides the rest of the details of the data link layer to allow different technologies to work seamlessly with the higher layers. Most local area networking technologies use the IEEE 802.2 LLC protocol.
+
+- Media Access Control (MAC): This refers to the procedures used by devices to control access to the network medium. Since many networks use a shared medium (such as a single network cable, or a series of cables that are electrically connected into a single virtual medium) it is necessary to have rules for managing the medium to avoid conflicts. For example. Ethernet uses the CSMA/CD method of media access control, while Token Ring uses token passing.
+
+- Data Framing: The data link layer is responsible for the final encapsulation of higher-level messages into frames that are sent over the network at the physical layer.
+
+- Addressing: The data link layer is the lowest layer in the OSI model that is concerned with addressing: labeling information with a particular destination location. Each device on a network has a unique number, usually called a hardware address or MAC address, that is used by the data link layer protocol to ensure that data intended for a specific machine gets to it properly.
+
+- Error Detection and Handling: The data link layer handles errors that occur at the lower levels of the network stack. For example, a cyclic redundancy check (CRC) field is often employed to allow the station receiving data to detect if it was received correctly.
