@@ -451,12 +451,19 @@ Types :
 -  The technique was originally used to bypass the need to assign a new address to every host when a network was moved, or when the upstream Internet service provider was replaced, but could not route the network's address space.
 
 ### **Data Link Layer (TCP)**
-This layer is the protocol layer that transfers data between nodes on a network segment across the physical layer.
 
+- This layer is the protocol layer that transfers data between nodes on a network segment across the physical layer.
 
+- transfers in frame.
+- frame contains data link layer address of sender & IP address of destination.
 
+- whenever a new device is connected to router, it is then connected to DHCP, the DHCP will provide a IP to device.
 
+- every connected have a ip address as well as data link layer address.
 
+- before sending any data its check the ARP cache , this process is known as address resolution protocol.
+
+- Data link layer addresses is known as mac addresses. 
 
 
 Data Link Layer Functions
